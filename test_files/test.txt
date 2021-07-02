@@ -1,0 +1,16 @@
+This
+  is
+    the:
+      test
+    file:
+      for  {
+   conVerting
+  the
+  indeNtion.
+ }
+
+no
+ th
+in   g
+   he
+	  re
