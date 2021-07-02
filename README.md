@@ -18,7 +18,7 @@ pip install regex
 
 will do.
 
-The origin `re` library cannot finish the task. :pensive:
+The origin `re` library fails to meet the needs. :pensive:
 
 ## Usage
 

@@ -1,6 +1,6 @@
 """
-Transform the current indention into something else.
-With this script, you can change one kind of indention to another type.
+Transform the current indentation into something else.
+With this script, you can change one kind of indentation to another type.
 """
 import argparse
 import regex as re
@@ -10,13 +10,13 @@ from config import config
 def main():
     # Define 4 arguments here:
     # file: <str> the path to the file to format.
-    # prev: <str> the previous indention to be converted.
-    # target: <str> the target indention to convert to.
+    # prev: <str> the previous indentation to be converted.
+    # target: <str> the target indentation to convert to.
     # appendix: <str> what to append to the converted file.
-    parser = argparse.ArgumentParser(description="arguments for converting indentions")
+    parser = argparse.ArgumentParser(description="arguments for converting indentations")
     parser.add_argument("--file", type=str)
-    parser.add_argument("--prev", type=str, default=config['default_prev_indention'])
-    parser.add_argument("--target", type=str, default=config['default_target_indention'])
+    parser.add_argument("--prev", type=str, default=config['default_prev_indentation'])
+    parser.add_argument("--target", type=str, default=config['default_target_indentation'])
     parser.add_argument("--appendix", type=str, default=config['appendix'])
     args = parser.parse_args()
     file_path = args.file
@@ -48,7 +48,7 @@ def main():
 
 def search_sub(in_f, out_f, prev_ind, target_ind):
     """
-    Line by line, searching from the start for the matched indentions and
+    Line by line, searching from the start for the matched indentations and
     then replace them.
     """
     while True:
@@ -66,7 +66,7 @@ def search_sub(in_f, out_f, prev_ind, target_ind):
 
 def re_sub(in_f, out_f, prev_ind, target_ind):
     """
-    Substitude those indentions with the help of regular expression!
+    Substitude those indentations with the help of regular expression!
     """
     text = in_f.read()
     pattern = re.compile(
