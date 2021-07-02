@@ -14,14 +14,24 @@ def main():
     # target: <str> the target indentation to convert to.
     # appendix: <str> what to append to the converted file.
     parser = argparse.ArgumentParser(description="arguments for converting indentations")
-    parser.add_argument("--file", type=str)
-    parser.add_argument("--prev", type=str, default=config['default_prev_indentation'])
-    parser.add_argument("--target", type=str, default=config['default_target_indentation'])
-    parser.add_argument("--appendix", type=str, default=config['appendix'])
+    parser.add_argument("-f", "--file",
+                        type=str, help="path to the file")
+    parser.add_argument("-p", "--prev",
+                        type=str, default=config['default_prev_indent'],
+                        help="the previous indentation to be converted")
+    parser.add_argument("-t", "--target",
+                        type=str, default=config['default_target_indent'],
+                        help="the target indentation to convert to")
+    parser.add_argument("-a", "--appendix",
+                        type=str, default=config['appendix'],
+                        help="what to append to the converted file")
     args = parser.parse_args()
     file_path = args.file
     prev_ind = args.prev
     target_ind = args.target
+
+    # escape the raw input of tabs (\t)
+    prev_ind = prev_ind.replace('\\t', '\t')
 
     dot_idx = file_path.rfind('.')
     if dot_idx == -1:
@@ -56,6 +66,8 @@ def search_sub(in_f, out_f, prev_ind, target_ind):
         if line == '':
             break
         cnt = 0
+        print(line[cnt*len(prev_ind):(cnt+1)*len(prev_ind)])
+        print(prev_ind)
         try:
             while line[cnt*len(prev_ind):(cnt+1)*len(prev_ind)] == prev_ind:
                 cnt += 1

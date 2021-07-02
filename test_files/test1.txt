@@ -1,0 +1,12 @@
+This file
+	is indented
+	by:
+		tabs.
+	So {
+		It may{
+			look
+		}
+	}
+	strange
+under some:
+	circumstances.

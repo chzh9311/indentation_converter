@@ -28,7 +28,7 @@ The usage is simple. The main function is inside `ind_cvt.py`, so to use it, sim
 python ind_cvt.py --file path/to/your/file.extension
 ```
 
-will create `file_cvt.extension` in the same directory as the original file.
+will do. The command create `file_cvt.extension` which contains the converted text in the same directory as the original file.
 
 **Note**: If there's an important file with the same name, it'll overwrite it. Editing the `config.py` or giving another argument to `--appendix` will help.
 
