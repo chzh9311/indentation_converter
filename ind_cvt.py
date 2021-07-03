@@ -13,7 +13,8 @@ def main():
     # prev: <str> the previous indentation to be converted.
     # target: <str> the target indentation to convert to.
     # appendix: <str> what to append to the converted file.
-    parser = argparse.ArgumentParser(description="arguments for converting indentations")
+    parser = argparse.ArgumentParser(
+        description="arguments for converting indentations")
     parser.add_argument("-f", "--file",
                         type=str, help="path to the file")
     parser.add_argument("-p", "--prev",
@@ -58,16 +59,13 @@ def main():
 
 def search_sub(in_f, out_f, prev_ind, target_ind):
     """
-    Line by line, searching from the start for the matched indentations and
-    then replace them.
+    Search indentations from the beginning of the line and subscribe them.
     """
     while True:
         line = in_f.readline()
         if line == '':
             break
         cnt = 0
-        print(line[cnt*len(prev_ind):(cnt+1)*len(prev_ind)])
-        print(prev_ind)
         try:
             while line[cnt*len(prev_ind):(cnt+1)*len(prev_ind)] == prev_ind:
                 cnt += 1
