@@ -35,7 +35,7 @@ will do. The command create `file_cvt.extension` which contains the converted te
 By default, the command convert indentations from two spaces to four. To do other transitions, you can specify values for `--prev` and `--target`, which are the indentations to change from and to respectively.
 
 ```shell
-python ind_cvt.py --file path/to/your/file.extension --prev '  ' --target '    '
+python ind_cvt.py --file path/to/your/file.extension --prev '    ' --target '\t'
 ```
 
 Also, you can specify the appendix:
@@ -46,8 +46,10 @@ python ind_cvt.py --file path/to/your/file.extension --appendix '_myAppendix'
 
 will produce `file_myAppendix.extension` in the same directory as your `file.extension`.
 
-Default values for those arguments are available in `config.py`.
+Additionally, short parameters are supported. In detail, `-f` is short from `--file`, `-p` from `--prev`, `-t` from `--target` and `-a` from `--appendix`.
 
-## ToDo
+Default values for those arguments are available in `config.py`. But note that there's no default value for your file path :smile:
+
+## To Do
 
 Add support for converting mixed indentations. (mixture of spaces and tabs, for example)
