@@ -10,10 +10,10 @@ By the way, since there are many other solutions to this problem, just consider 
 
 The interpreter, Python 3, is certainly a requirement.
 
-Besides, please make sure the Python library `regex` is installed. Simply
+Besides, please make sure the Python libraries `argparse` and `regex` are installed. Simply
 
 ```shell
-pip install regex
+pip install argparse regex
 ```
 
 will do.
